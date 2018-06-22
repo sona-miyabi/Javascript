@@ -1,9 +1,8 @@
 ### 运行: chrome
->   localforage 是一个可以简单操作localStorage, WebSQL, indexedDB 的模块
->  参考 https://github.com/localForage/localForage
->  参考 https://localforage.github.io/localForage/#multiple-instances-createinstance
->  [准备] 导入库文件地址
->  [localforage](https://cdnjs.cloudflare.com/ajax/libs/localforage/1.7.2/localforage.min.js)
+> * localforage 是一个可以简单操作localStorage, WebSQL, indexedDB 的模块
+> * [git](https://github.com/localForage/localForage)<br>
+> * [api](https://localforage.github.io/localForage/#multiple-instances-createinstance)
+> * https://cdnjs.cloudflare.com/ajax/libs/localforage/1.7.2/localforage.min.js
 
 
 ### 连接数据库
@@ -40,12 +39,18 @@
 > 设置配置
 > ```javascript
 > let opt={
-> 	driver:[localforage.INDEXEDDB, localforage.WEBSQL, localforage.LOCALSTORAG],// 首选驱动顺序, 与setDriver上面传递的格式相同
-> 	name:'localforage',	// 数据库的名称, 在localStorage中用于键的前缀
-> 	size:4980736,		// 数据库字节大小, 仅用于WebSQL
-> 	storeName:'keyvaluepairs',	// 数据存储的名称, IndexedDB中的objectStore名; WebSQL中的表名. (任何非字母数字字符都将转换为下划线)
-> 	version:1.0,	// 数据库的版本, 仅用于WebSQL和IndexedDB, 在WebSQL中只是设置版本, 在IndexedDB中当触发onupgradeneeded事件时被调用.
-> 	description:''	// 数据库的描述，基本上针对开发者的使用。
+> // 首选驱动顺序, 与setDriver上面传递的格式相同
+> driver:\[localforage.INDEXEDDB, localforage.WEBSQL, localforage.LOCALSTORAG\],
+> // 数据库的名称, 在localStorage中用于键的前缀
+> name:'localforage',
+> // 数据库字节大小, 仅用于WebSQL
+> size:4980736,
+> // 数据存储的名称, IndexedDB中的objectStore名; WebSQL中的表名. (任何非字母数字字符都将转换为下划线)
+> storeName:'keyvaluepairs',
+> // 在WebSQL中只是设置版本, 在IndexedDB中当触发onupgradeneeded事件时被调用
+> version:1.0,
+> // 数据库的描述，基本上针对开发者的使用。
+> description:''
 > }
 > localforage.config(opt)
 
@@ -65,14 +70,6 @@
 > .catch( err=>console.log(err) )
 > ```
 
-> 删除<br>
-> 删除键的值
-> ```javascript
-> db.removeItem('k')
-> .then( ()=>{} )
-> .catch( err=>console.log(err) )
-> ```
-
 > 读取<br>
 > 读取索引的值 (未知键名, 用索引时)
 > ```javascript
@@ -87,6 +84,14 @@
 > db.getItem('k')
 > .then( v=>console.log(v) )
 > .catch( err=>console.log(err) );	// 
+> ```
+
+> 删除<br>
+> 删除键的值
+> ```javascript
+> db.removeItem('k')
+> .then( ()=>{} )
+> .catch( err=>console.log(err) )
 > ```
 
 > 数量<br>
