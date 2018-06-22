@@ -56,44 +56,53 @@
 > ```
 
 ### 数据操作
-> 连接
+
+> 保存<br>
+> 设置键的值
 > ```javascript
-> let db=localforage.createInstance({ name:'1', storeName:'1' });
+> db.setItem('k', 'v')
+> .then( v=>console.log(v) )
+> .catch( err=>console.log(err) )
 > ```
 
-> 保存
+> 删除<br>
+> 删除键的值
 > ```javascript
-> db.setItem('k', 'v').then( v=>console.log(v) ).catch( err=>console.log(err) );	// 设置k键的值
+> db.removeItem('k')
+> .then( ()=>{} )
+> .catch( err=>console.log(err) )
 > ```
 
-###删除
-```javascript
-db.removeItem('k').then( ()=>{} ).catch( err=>console.log(err) );		// 删除k键的值
-```
-
-### 批量操作
-
-* 清空数据库所有键的值 
-```javascript
-db.clear()
-.then( ()=>{} )
-.catch( err=>console.log(err) );
-```
-
-### 读取
-
-> 获取索引的值 (未知键名, 用索引时)
+> 读取<br>
+> 读取索引的值 (未知键名, 用索引时)
 > ```javascript
 > db.key(0)
 > .then( v=>console.log(v) )
 > .catch( err=>console.log(err) );
 > ```
 
-> 获取键名的值(已知键名时)
+> 读取<br>
+> 读取键名的值(已知键名时)
 > ```javascript
 > db.getItem('k')
 > .then( v=>console.log(v) )
 > .catch( err=>console.log(err) );	// 
+> ```
+
+> 数量<br>
+>  ```javascript
+> db.length()
+> .then( v=>console.log(v) )
+> .catch( err=>console.log(err) )
+> ```
+
+### 批量操作
+
+> 清空数据库所有键的值 
+> ```javascript
+> db.clear()
+> .then( ()=>{} )
+> .catch( err=>console.log(err) );
 > ```
 
 > 获取所有键名(数组)
@@ -103,12 +112,6 @@ db.clear()
 > .catch( err=>console.log(err) )
 > ```
 
-> 获取键值对数量
-> ```javascript
-> db.length()
-> .then( v=>console.log(v) )
-> .catch( err=>console.log(err) )
-> ```
 
 
 
