@@ -18,6 +18,7 @@ n=0xf;      // 15   16进制表示法
 
 
 ### 进制转换
+
 - 10转换为其他进制
 ```javascript
 let s;
@@ -29,6 +30,7 @@ n .toString();      // '10'     十进制
 n .toString(16);    // 'f'      十六进制
 n .toString(36);    // 'f'      三十六进制(已达上限) [0-9a-z](36个)
 ```
+
 - 其他进制转十进制
 ```javascript
 [
@@ -39,6 +41,7 @@ parseInt('f',   16),// 15  十进制
 parseInt('z',   36) // 35  十进制
 ]
 ```
+
 
 ### 静态属性
 ```javascript
@@ -54,6 +57,7 @@ Number.POSITIVE_INFINITY,    // Infinity  特殊的正无穷大值，在溢出�
 ]
 // console.log(a)
 ```
+
 
 ### 静态方法
 ```javascript
@@ -107,6 +111,8 @@ isNaN(" "),        // false
 ]
 console.log(b)
 ```
+
+
 - Number.isSafeInteger(v)
 v的安全整数范围为
  -(Math.pow(2,53) - 1)到 Math.pow(2,53) - 1 之间的整数，
@@ -121,6 +127,7 @@ Number.isSafeInteger("3");                  // false
 Number.isSafeInteger(3.1);                  // false
 Number.isSafeInteger(3.0);                  // true
 ```
+
 
 - Number.isFinite()和全局isFinite()
 表示给定的值是否是一个有穷数
@@ -138,6 +145,8 @@ Number.isFinite(2e64)       // true
 ]
 console.log(a)
 ```
+
+
 - Number.isInteger()
 如果被检测的值是整数，则返回 true，否则返回 false。注意 NaN 和正负 Infinity 不是整数。
 ```javascript
@@ -159,6 +168,8 @@ Number.isInteger([1])        // false
 ]
 console.log(a)
 ```
+
+
 - Number.parseFloat() 同于 全局的parseFloat()
 ```javascript
 // 浮点数的正则表达式
@@ -185,7 +196,10 @@ parseFloat("999 888"),           // 999
 ]
 console.log(a)
 ```
+
 - Number.parseInt() 与 全局 parseInt() 完全一样
+
+
 
 ### ++ -- 默认都是加减1，但却根据位置不同，当时的结果也不同
 ```javascript
@@ -199,6 +213,8 @@ x=9
 console.log(--x)	// 8
 console.log(x)		// 8
 ```
+
+
 #### += -= 就是运算后的结果
 ```javascript
 let  x
