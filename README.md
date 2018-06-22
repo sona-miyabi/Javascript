@@ -3,7 +3,7 @@ Javascript学习资料
 
 
 
-[是否 Boolean](./Boolean)<br>
+[真假 Boolean](./Boolean)<br>
 [数值 Number](./Number)<br>
 [字符串 String](./String)<br>
 [数组 Array](./Array)<br>
