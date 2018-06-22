@@ -1,4 +1,5 @@
 ### 数值的定义
+
 ```javascript
 let n;
 
@@ -20,6 +21,7 @@ n=0xf;      // 15   16进制表示法
 ### 进制转换
 
 - 10转换为其他进制
+
 ```javascript
 let s;
 let n=15;
@@ -32,6 +34,7 @@ n .toString(36);    // 'f'      三十六进制(已达上限) [0-9a-z](36个)
 ```
 
 - 其他进制转十进制
+
 ```javascript
 [
 parseInt('1111', 2),// 15  十进制
@@ -44,6 +47,7 @@ parseInt('z',   36) // 35  十进制
 
 
 ### 静态属性
+
 ```javascript
 let a=[
 Number.EPSILON,              // 2.220446049250313e-16   两个可表示(representable)数之间的最小间隔。
@@ -60,6 +64,7 @@ Number.POSITIVE_INFINITY,    // Infinity  特殊的正无穷大值，在溢出�
 
 
 ### 静态方法
+
 ```javascript
 // Number.isNaN()              // 确定传递的值是否是 NaN。
 // Number.isFinite()           // 确定传递的值类型及本身是否是有限数。
@@ -72,6 +77,7 @@ Number.POSITIVE_INFINITY,    // Infinity  特殊的正无穷大值，在溢出�
 
 
 - Number.isNaN() 和全局的isNaN有区别。
+
 ```javascript
 console.log(NaN==NaN, NaN===NaN)    // false false  无法比较两个NaN是否相等，所以只能用判断函数
 
@@ -115,8 +121,10 @@ console.log(b)
 
 - Number.isSafeInteger(v)
 v的安全整数范围为
+
  -(Math.pow(2,53) - 1)到 Math.pow(2,53) - 1 之间的整数，
 包含 -(Math.pow(2,53) - 1)和 Math.pow(2,53) - 1。
+
 ```javascript
 Number.isSafeInteger(3);                    // true
 Number.isSafeInteger(Math.pow(2, 53) - 1)   // true
@@ -131,6 +139,7 @@ Number.isSafeInteger(3.0);                  // true
 
 - Number.isFinite()和全局isFinite()
 表示给定的值是否是一个有穷数
+
 ```javascript
 let a=[
 Number.isFinite(Infinity),  // false
@@ -149,6 +158,7 @@ console.log(a)
 
 - Number.isInteger()
 如果被检测的值是整数，则返回 true，否则返回 false。注意 NaN 和正负 Infinity 不是整数。
+
 ```javascript
 let a=[
 Number.isInteger(0),         // true
@@ -171,6 +181,7 @@ console.log(a)
 
 
 - Number.parseFloat() 同于 全局的parseFloat()
+
 ```javascript
 // 浮点数的正则表达式
 // /^(\-|\+)?|(\.\d+)(\d+(\.\d+)?|(\d+\.)|Infinity)$/
@@ -202,6 +213,7 @@ console.log(a)
 
 
 ### ++ -- 默认都是加减1，但却根据位置不同，当时的结果也不同
+
 ```javascript
 let  x
 
@@ -216,6 +228,7 @@ console.log(x)		// 8
 
 
 #### += -= 就是运算后的结果
+
 ```javascript
 let  x
 
