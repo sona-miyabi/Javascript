@@ -7,7 +7,7 @@
 
 ### 连接数据库
 
-连接自定义的数据库(同步)
+- 连接自定义的数据库(同步)
 ```javascript
 let db = localforage.createInstance({
 	name: "dbName",			// 数据库名称
@@ -15,12 +15,12 @@ let db = localforage.createInstance({
 });
 ```
 
-默认连接数据库
+- 默认连接数据库
 ```javascript
 let db = localforage;	// { name:'localforage', storeName:'keyvalepairs' }
 ```
 
-版本的自动升级(objectStore)
+- 版本的自动升级(objectStore)
 ```javascript
 // 假设当前版本为2
 localforage.createInstance({name:1, storeName:1});// 此时版本将内部升级为3
@@ -36,7 +36,7 @@ localforage.dropInstance({name:1, storeName:2});// 此时版本将内部升级�
 ### 配置 db.config(opt)
  提示: 对于indexedDB, 真正常用的就只有 name 和 storeName
 
-设置配置
+- 设置配置
 ```javascript
 let opt={
 	// 首选驱动顺序, 与setDriver上面传递的格式相同
@@ -59,7 +59,7 @@ let opt={
 }
 localforage.config(opt)
 
-读取配置
+- 读取配置
 ```Javascript
 localforage.config();		// {name, storeName, ...}
 localforage.config('name');	// 获取name
@@ -67,7 +67,7 @@ localforage.config('name');	// 获取name
 
 ### 数据操作
 
-保存<br>
+- 保存<br>
 设置键的值
 ```javascript
 db.setItem('k', 'v')
@@ -75,7 +75,7 @@ db.setItem('k', 'v')
 .catch( err=>console.log(err) )
 ```
 
-读取<br>
+- 读取<br>
 读取索引的值 (未知键名, 用索引时)
 ```javascript
 db.key(0)
@@ -83,7 +83,7 @@ db.key(0)
 .catch( err=>console.log(err) );
 ```
 
-读取<br>
+- 读取<br>
 读取键名的值(已知键名时)
 ```javascript
 db.getItem('k')
@@ -91,7 +91,7 @@ db.getItem('k')
 .catch( err=>console.log(err) );	// 
 ```
 
-删除<br>
+- 删除<br>
 删除键的值
 ```javascript
 db.removeItem('k')
@@ -99,7 +99,7 @@ db.removeItem('k')
 .catch( err=>console.log(err) )
 ```
 
-数量<br>
+- 数量<br>
  ```javascript
 db.length()
 .then( v=>console.log(v) )
@@ -108,14 +108,14 @@ db.length()
 
 ### 批量操作
 
-清空数据库所有键的值 
+- 清空数据库所有键的值 
 ```javascript
 db.clear()
 .then( ()=>{} )
 .catch( err=>console.log(err) );
 ```
 
-获取所有键名(数组)
+- 获取所有键名(数组)
 ```javascript
 db.keys()
 .then( v=>console.log(v) )
