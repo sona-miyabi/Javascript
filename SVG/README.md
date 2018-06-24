@@ -128,12 +128,19 @@ a rx ry rotation large sweep dx dy||
         .stop3 { stop-color: blue; }
       ]]></style>
   </defs>
+  
    <rect id="rect1" x="10" y="10" rx="15" ry="15" width="100" height="100"/>
    <rect x="10" y="120" rx="15" ry="15" width="100" height="100" fill="url(#Gradient2)"/>
-   <rect x="10" y="10" rx="15" ry="15" width="100" height="100"
+
+  <rect x="10" y="10" rx="15" ry="15" width="100" height="100"
         fill="url(#Gradient)" stroke="black" stroke-width="2"/>
+  <circle cx="60" cy="60" r="50" fill="transparent" stroke="white" stroke-width="2"/>
+  <circle cx="35" cy="35" r="2" fill="white" stroke="white"/>
+  <circle cx="60" cy="60" r="2" fill="white" stroke="white"/>
+  <text x="38" y="40" fill="white" font-family="sans-serif" font-size="10pt">(fx,fy)</text>
+  <text x="63" y="63" fill="white" font-family="sans-serif" font-size="10pt">(cx,cy)</text>
 </svg>
 ```
-
+[圆形渐变](radial-grandient.png) 
 
 #####
