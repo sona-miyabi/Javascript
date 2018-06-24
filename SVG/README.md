@@ -93,6 +93,47 @@ t dx dy||镜像上一个控制点的终点偏移(前面Qq或Tt)
 A rx ry rotation large sweep x y||椭圆的x半径,y半径,旋转度数,large弧度比180度小0/大1,sweep起终逆时针0/顺时针1.
 a rx ry rotation large sweep dx dy||
 
-#### stroke-linecap 线条模式
+##### stroke 线条模式
 ![线条模式](stroke-linecap.png)
 ![折线连接](stroke-linejoin.png)
+![点线比例](stroke-dasharray.png)<br>
+`fill-rule`, `stroke-miterlimit`, `stroke-dashoffset`
+> \<rect style="stroke:black; fill:red" /\> 可以接收的style属性
+
+##### \<defs\>中的内容可以不被\<svg\>显示.
+- \<style\>标签<br>
+- \<linearGradient\>节点<br>
+```html
+<svg width="120" height="240" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+      <linearGradient id="Gradient1">
+        <stop class="stop1" offset="0%"/>
+        <stop class="stop2" offset="50%"/>
+        <stop class="stop3" offset="100%"/>
+      </linearGradient>
+      <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0%" stop-color="red"/>
+        <stop offset="50%" stop-color="black" stop-opacity="0"/>
+        <stop offset="100%" stop-color="blue"/>
+      </linearGradient>
+      <radialGradient id="Gradient"
+            cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25">
+        <stop offset="0%" stop-color="red"/>
+        <stop offset="100%" stop-color="blue"/>
+      </radialGradient>
+      <style type="text/css"><![CDATA[
+        #rect1 { fill: url(#Gradient1); }
+        .stop1 { stop-color: red; }
+        .stop2 { stop-color: black; stop-opacity: 0; }
+        .stop3 { stop-color: blue; }
+      ]]></style>
+  </defs>
+   <rect id="rect1" x="10" y="10" rx="15" ry="15" width="100" height="100"/>
+   <rect x="10" y="120" rx="15" ry="15" width="100" height="100" fill="url(#Gradient2)"/>
+   <rect x="10" y="10" rx="15" ry="15" width="100" height="100"
+        fill="url(#Gradient)" stroke="black" stroke-width="2"/>
+</svg>
+```
+
+
+#####
