@@ -84,5 +84,13 @@ v dy|v 10|竖线向下画10
 Z或z|z|从最后一个点画到move的起点,路径闭合.
 C x1 y1 x2 y2 x y| |贝塞尔曲线. 起点控制点,终点控制点,终点
 c dx1 dy1 dx2 dy2 dx dy| |贝塞尔曲线. 起点控制偏移点,终点控制偏移点,终点偏移点
-S x2 y2 x y|
-s dx2 dy2 dx dy|
+S x2 y2 x y||对称控制点,终点
+s dx2 dy2 dx dy||对称控制偏移点,终点偏移
+Q x1 y1 x y||起点与终点的控制点,终点
+q dx1 dy1 dx dy||起点与终点的控制点偏移,终点偏移
+T x y||镜像上一个控制点的终点(前面必须有Qq或Tt)
+t dx dy||镜像上一个控制点的终点偏移(前面Qq或Tt)
+A rx ry rotation large sweep x y||椭圆的x半径,y半径,旋转度数,large弧度比180度小0/大1,sweep起终逆时针0/顺时针1.
+a rx ry rotation large sweep dx dy||
+
+
