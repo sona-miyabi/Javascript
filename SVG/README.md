@@ -95,3 +95,4 @@ a rx ry rotation large sweep dx dy||
 
 #### stroke-linecap 线条模式
 ![线条模式](stroke-linecap.png)
+![折线连接](stroke-linejoin.png)
