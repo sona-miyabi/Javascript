@@ -93,4 +93,5 @@ t dx dy||镜像上一个控制点的终点偏移(前面Qq或Tt)
 A rx ry rotation large sweep x y||椭圆的x半径,y半径,旋转度数,large弧度比180度小0/大1,sweep起终逆时针0/顺时针1.
 a rx ry rotation large sweep dx dy||
 
-
+#### stroke-linecap 线条模式
+![线条模式](stroke-linecap.png)
