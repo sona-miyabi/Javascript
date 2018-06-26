@@ -72,8 +72,8 @@ let b=a.filter((e,i,a)=>{
 console.log(b)
 ```
 > ```json
-[ 1, 2, 3, true, false, null ]
-```
+> [ 1, 2, 3, true, false, null ]
+> ```
 - 老三 .filter()<br>
 过滤出仅符合要求的元素的数组.
 ```javascript
