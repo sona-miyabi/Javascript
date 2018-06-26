@@ -111,10 +111,10 @@ console.log(b)	// false
 true   哪怕只要有一个符合就行<br>
 false  全部都不符合
 ```javascript
-b=a.every((e,i,a)=>{
+b=a.some((e,i,a)=>{
 	return !isNaN(e)
 })
-console.log(b)	// false
+console.log(b)	// true
 ```
 ### 转为数组
 Array.from( arrayLike [, mapFn[, _this]])<br>
