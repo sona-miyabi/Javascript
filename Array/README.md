@@ -66,23 +66,34 @@ array.forEach((e,i,a)=>{
 - 老二 .map()<br>
 遍历并返回新元素组成的数组.
 ```javascript
+b=a.map((e,i,a)=>{
+	return 'prefix-'+e+'i';
+})
+console.log(b)
+```
+> `[ 1, 2, 3, 'a', 'b', 'c', true, false, null, undefined, NaN ]`
+- 老三 .filter()<br>
+过滤出仅符合要求的元素的数组.
+
+```javascript
 let b=a.filter((e,i,a)=>{
 	return !isNaN(e)
 })
 console.log(b)
 ```
 > ```json
-> [ 1, 2, 3, true, false, null ]
+> [ 'prefix-1i',
+>   'prefix-2i',
+>   'prefix-3i',
+>   'prefix-ai',
+>   'prefix-bi',
+>   'prefix-ci',
+>   'prefix-truei',
+>   'prefix-falsei',
+>   'prefix-nulli',
+>   'prefix-undefinedi',
+>   'prefix-NaNi' ]
 > ```
-- 老三 .filter()<br>
-过滤出仅符合要求的元素的数组.
-```javascript
-b=a.filter((e,i,a)=>{
-	return !isNaN(i)
-})
-console.log(b)
-```
-> `[ 1, 2, 3, 'a', 'b', 'c', true, false, null, undefined, NaN ]`
 - 老四 .every()<br>
 对所有元素做评估, 全部符合要求时返回true, 只要有一个不符合要求就返回false.<br>
 true   全部都符合要求<br>
