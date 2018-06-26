@@ -66,22 +66,14 @@ array.forEach((e,i,a)=>{
 - 老二 .map()<br>
 遍历并返回新元素组成的数组.
 ```javascript
-b=a.map((e,i,a)=>{
-	return i+':'+e
+let b=a.filter((e,i,a)=>{
+	return !isNaN(e)
 })
 console.log(b)
 ```
-> `[ '0:1',`<br>
-> `  '1:2',`<br>
-> `  '2:3',`<br>
-> `  '3:a',`<br>
-> `  '4:b',`<br>
-> `  '5:c',`<br>
-> `  '6:true',`<br>
-> `  '7:false',`<br>
-> `  '8:null',`<br>
-> `  '9:undefined',`<br>
-> `  '10:NaN' ]`<br>
+> ```json
+[ 1, 2, 3, true, false, null ]
+```
 - 老三 .filter()<br>
 过滤出仅符合要求的元素的数组.
 ```javascript
