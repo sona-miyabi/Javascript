@@ -81,7 +81,7 @@ let b=a.filter((e,i,a)=>{
 })
 console.log(b)
 ```
-> ```json
+> ```javascript
 > [ 'prefix-1i',
 >   'prefix-2i',
 >   'prefix-3i',
