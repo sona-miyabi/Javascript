@@ -33,6 +33,9 @@ Array.isArray(false);
 Array.isArray({ __proto__: Array.prototype });
 ```
 #### 数组5兄弟
+接下来让我们熟悉一下这5个兄弟吧。<br>
+首先，设置一个变量a。<br>
+5个兄弟都用这个变量来做测试。
 ```javascript
 let a = [
 	1,2,3,
@@ -40,12 +43,12 @@ let a = [
 	true,false,
 	null,undefined,NaN
 ];
-let b;
 ```
-- array.forEach()
+1) 老大 .forEach()
+遍历数组, 什么都不返回.
 ```javascript
-a.forEach((e,i,a)=>{
-	// 参数a就是数组a, 输出内容过长, 这里省略
+array.forEach((e,i,a)=>{
+	// 参数a就是数组array, 输出内容过长, 这里省略
 	console.log('内容:%s, 位置:%i',e,i)
 })
 ```
@@ -60,7 +63,8 @@ a.forEach((e,i,a)=>{
 > `内容:null, 位置:8`<br>
 > `内容:undefined, 位置:9`<br>
 > `内容:NaN, 位置:10`<br>
-- array.map()
+2) 老二 .map()
+遍历并返回新元素组成的数组.
 ```javascript
 b=a.map((e,i,a)=>{
 	return i+':'+e
@@ -78,7 +82,8 @@ console.log(b)
 > `  '8:null',`<br>
 > `  '9:undefined',`<br>
 > `  '10:NaN' ]`<br>
-- array.filter()
+3) 老三 .filter()
+过滤出仅符合要求的元素的数组.
 ```javascript
 b=a.filter((e,i,a)=>{
 	return !isNaN(i)
@@ -86,7 +91,8 @@ b=a.filter((e,i,a)=>{
 console.log(b)
 ```
 > `[ 1, 2, 3, 'a', 'b', 'c', true, false, null, undefined, NaN ]`
-- array.every()<br>
+4) 老四 .every()
+对所有元素做评估, 全部符合要求时返回true, 只要有一个不符合要求就返回false.<br>
 true   全部都符合要求<br>
 false  哪怕只要有一个不符合
 ```javascript
@@ -95,7 +101,8 @@ b=a.every((e,i,a)=>{
 })
 console.log(b)	// false
 ```
-- array.some()<br>
+5) 老五 .some()
+对所有元素做评估, 全部不符合要求时返回false, 只要有一个不符合要求就返回true.<br>
 true   哪怕只要有一个符合就行<br>
 false  全部都不符合
 ```javascript
