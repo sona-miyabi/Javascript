@@ -67,11 +67,23 @@ array.forEach((e,i,a)=>{
 遍历并返回新元素组成的数组.
 ```javascript
 b=a.map((e,i,a)=>{
-	return 'prefix-'+e+'i';
+	return 'prefix-'+e+'-'+i;
 })
 console.log(b)
 ```
-> `[ 1, 2, 3, 'a', 'b', 'c', true, false, null, undefined, NaN ]`
+> ```javascript
+> [ 'prefix-1-0',
+>   'prefix-2-1',
+>   'prefix-3-2',
+>   'prefix-a-3',
+>   'prefix-b-4',
+>   'prefix-c-5',
+>   'prefix-true-6',
+>   'prefix-false-7',
+>   'prefix-null-8',
+>   'prefix-undefined-9',
+>   'prefix-NaN-10' ]
+> ```
 - 老三 .filter()<br>
 过滤出仅符合要求的元素的数组.
 
@@ -82,17 +94,7 @@ let b=a.filter((e,i,a)=>{
 console.log(b)
 ```
 > ```javascript
-> [ 'prefix-1i',
->   'prefix-2i',
->   'prefix-3i',
->   'prefix-ai',
->   'prefix-bi',
->   'prefix-ci',
->   'prefix-truei',
->   'prefix-falsei',
->   'prefix-nulli',
->   'prefix-undefinedi',
->   'prefix-NaNi' ]
+> [ 1, 2, 3, true, false, null ]
 > ```
 - 老四 .every()<br>
 对所有元素做评估, 全部符合要求时返回true, 只要有一个不符合要求就返回false.<br>
