@@ -38,3 +38,17 @@ console.log(o)					  // O {}
 console.log(o.x)				  // 1
 console.log(o.__proto__)	// {x:1,y:2}
 ```
+
+类
+```javascript
+class O {
+	constructor(){
+		this.x=11
+	}
+}
+
+let o=new O();
+
+console.log(o.x)			// 11
+console.log(o.__proto__)	// O {}
+```
