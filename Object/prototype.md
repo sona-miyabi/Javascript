@@ -52,3 +52,52 @@ let o=new O();
 console.log(o.x)			// 11
 console.log(o.__proto__)	// O {}
 ```
+
+继承
+```javascript
+class Z {
+	constructor(){
+		constructor.prototype.z=3
+	}
+
+	name(){
+		return 'O2'
+	}
+}
+
+class Y extends Z {
+	constructor(){
+		// 用了extends, 就必须调用super()
+		// super就是父类的constructor构造函数
+		super()	
+		constructor.prototype.y=2
+	}
+
+	// 覆盖了O2的函数
+	get name(){
+		return 'O1'
+	}
+}
+
+class X extends Y{
+	constructor(){
+		constructor.prototype.x=1
+		super()
+	}
+}
+
+let x=new X();
+x.n=0
+console.log(x.x)			// 1
+console.log(x.y)			// 2
+console.log(x.z)			// 3
+
+console.log(x.hasOwnProperty('n'), x.n)		// true 0
+console.log(x.hasOwnProperty('x'), x.x)		// false 1
+console.log(x.__proto__.hasOwnProperty('x'))		// false
+console.log(x.__proto__.__proto__.hasOwnProperty('x'))		// false
+console.log(x.__proto__.__proto__.__proto__.hasOwnProperty('x'))		// false
+console.log(x.__proto__.__proto__.__proto__.__proto__.hasOwnProperty('x'))		// true
+console.log(x.__proto__.__proto__.__proto__.hasOwnProperty('y'))		// false
+console.log(x.__proto__.__proto__.__proto__.__proto__.hasOwnProperty('y'))		// true
+```
