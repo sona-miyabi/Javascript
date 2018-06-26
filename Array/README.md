@@ -44,7 +44,7 @@ let a = [
 	null,undefined,NaN
 ];
 ```
-1) 老大 .forEach()
+- 老大 .forEach()<br>
 遍历数组, 什么都不返回.
 ```javascript
 array.forEach((e,i,a)=>{
@@ -63,7 +63,7 @@ array.forEach((e,i,a)=>{
 > `内容:null, 位置:8`<br>
 > `内容:undefined, 位置:9`<br>
 > `内容:NaN, 位置:10`<br>
-2) 老二 .map()
+- 老二 .map()<br>
 遍历并返回新元素组成的数组.
 ```javascript
 b=a.map((e,i,a)=>{
@@ -82,7 +82,7 @@ console.log(b)
 > `  '8:null',`<br>
 > `  '9:undefined',`<br>
 > `  '10:NaN' ]`<br>
-3) 老三 .filter()
+- 老三 .filter()<br>
 过滤出仅符合要求的元素的数组.
 ```javascript
 b=a.filter((e,i,a)=>{
@@ -91,7 +91,7 @@ b=a.filter((e,i,a)=>{
 console.log(b)
 ```
 > `[ 1, 2, 3, 'a', 'b', 'c', true, false, null, undefined, NaN ]`
-4) 老四 .every()
+- 老四 .every()<br>
 对所有元素做评估, 全部符合要求时返回true, 只要有一个不符合要求就返回false.<br>
 true   全部都符合要求<br>
 false  哪怕只要有一个不符合
@@ -101,7 +101,7 @@ b=a.every((e,i,a)=>{
 })
 console.log(b)	// false
 ```
-5) 老五 .some()
+- 老五 .some()<br>
 对所有元素做评估, 全部不符合要求时返回false, 只要有一个不符合要求就返回true.<br>
 true   哪怕只要有一个符合就行<br>
 false  全部都不符合
