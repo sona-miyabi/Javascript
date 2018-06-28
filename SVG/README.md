@@ -10,7 +10,6 @@ svg虽是html5的范畴, 但js同样可以对其进行操作.
 width|int|画布宽度
 height|int|画布高度
 viewBox|str|内容显示。<br>此例中将显示宽高各为100的内容，画布为200，等同于放大了2倍显示。
-width
 ```html
 <svg
   width="200"
