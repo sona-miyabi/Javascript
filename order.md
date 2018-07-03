@@ -12,6 +12,8 @@ function f1(){
 ```
 
 
+### 作用域
+
 ```javascript
 f2();
 console.log('cc',cc);// 9
