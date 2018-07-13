@@ -189,12 +189,6 @@ o2 = Object.assign( {c:4, d:5 }, o1);   // { c:3, d:5, a:1, b:2 }
 
 ```
 
-#### Object.getOwnPropertyNames()
-返回一个数组，它包含了指定对象所有的可枚举或不可枚举的属性名。
-```javascript
-
-```
-
 #### Object.getOwnPropertySymbols()
 返回一个数组，它包含了指定对象自身所有的符号属性。
 ```javascript
@@ -231,10 +225,41 @@ o2 = Object.assign( {c:4, d:5 }, o1);   // { c:3, d:5, a:1, b:2 }
 
 ```
 
-#### Object.keys()
-返回一个包含所有给定对象自身可枚举属性名称的数组。
-```javascript
+#### `Object.keys`(obj)  :Array
+返回obj可枚举属性名称的数组。
 
+#### `Object.getOwnPropertyNames`(obj)  :Array
+返回obj可枚举和不可枚举的属性名。
+
+#### 'propertyName' `in` obj
+返回obj和obj的继承链中是否有属性名propertyName
+
+```javascript
+let o={
+	a:1,
+	get b(){ return 2; },
+	__proto__: {d:4 }
+}
+Object.defineProperty(o,'c',{value:3})
+
+
+console.log(o.a);// 1
+console.log(o.b);// 2
+console.log(o.c);// 3
+console.log(o.d);// 4
+
+console.log('a' in o);// true
+console.log('b' in o);// true
+console.log('c' in o);// true
+console.log('d' in o);// true
+
+console.log(Object.keys(o));// ['a','b']
+console.log(Object.getOwnPropertyNames(o));// ['a','b','c']
+
+console.log(o.hasOwnProperty('a'));// true
+console.log(o.hasOwnProperty('b'));// true
+console.log(o.hasOwnProperty('c'));// true
+console.log(o.hasOwnProperty('d'));// false
 ```
 
 #### Object.preventExtensions()
