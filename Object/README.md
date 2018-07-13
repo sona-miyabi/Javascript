@@ -228,6 +228,9 @@ o2 = Object.assign( {c:4, d:5 }, o1);   // { c:3, d:5, a:1, b:2 }
 #### `Object.keys`(obj)  :Array
 返回obj可枚举属性名称的数组。
 
+#### `Object.values`(obj)   :Array
+返回给定对象自身可枚举值的数组。
+
 #### `Object.getOwnPropertyNames`(obj)  :Array
 返回obj可枚举和不可枚举的属性名。
 
@@ -254,6 +257,7 @@ console.log('c' in o);// true
 console.log('d' in o);// true
 
 console.log(Object.keys(o));// ['a','b']
+console.log(Object.values(o));// [1,2]
 console.log(Object.getOwnPropertyNames(o));// ['a','b','c']
 
 console.log(o.hasOwnProperty('a'));// true
@@ -276,28 +280,6 @@ console.log(o.hasOwnProperty('d'));// false
 
 #### Object.setPrototypeOf()
 设置对象的原型（即内部[[Prototype]]属性）。
-```javascript
-
-```
-
-#### Object.values()
-返回给定对象自身可枚举值的数组。
-```javascript
-
-```
-
-```javascript
-
-```
-```javascript
-
-```
-```javascript
-
-```
-```javascript
-
-```
 ```javascript
 
 ```
