@@ -1,12 +1,37 @@
 #### 定义Object
 `{}` 与 `new Object()` 一样。<br>
 在键值对中，键名只能是字符串，键值可以是任何类型的数据。
-```javascript
+```javascript=
 let o1 = { a:'foo', b:42, c:{} };
 console.log(o1.a); // 'foo'
 ```
+
+ES6特性
+```javascript=
+var {a,b,c,d} = { a:1, b:2, c:3 };
+console.log(a);// 1
+console.log(b);// 2
+console.log(c);// 3
+console.log(d);// undefined
+
+// let {a,b}={a:11,b:22,c:33};// SyntaxError: a已定义
+// {a,b}={a:11,b:22,c:33};// SyntaxError: 意外标记=
+({a,b}={a:11,b:22,c:33});
+console.log(a);// 11
+console.log(b);// 22
+```
+
+如同
+```javascript=
+let o={a:1, b:2, c:3};
+let a=o.a;
+let b=o.b;
+let c=o.c;
+```
+
+
 - 定义时采用变量，而不是键值对。
-```javascript
+```javascript=
 let
 a = 'foo',
 b = 42,
@@ -15,7 +40,7 @@ o2 = { a,b,c }     // 等同于 {a: a, b: b, c: c}
 console.log(o2.b), // 42
 ```
 - 定义了私有变量
-```javascript
+```javascript=
 let o = {
     _key: 1,
     method: function () { console.log('_key=',this._key) },     // method
@@ -31,7 +56,7 @@ o.method()                      // 输出'_key= 2'
 ```
 
 - 在定义对象时，键名就可以用变量
-```javascript
+```javascript=
 let
 key = 'key',
 o = {
@@ -43,7 +68,7 @@ console.log(o)  // { key:'value', _key:'_value' }
 ```
 
 - 用属性访问器方式来定义属性
-```javascript
+```javascript=
 var i = 0;
 var a = {
   ['foo' + ++i]: i,
@@ -66,14 +91,14 @@ console.log(config); // {size: 12, mobileSize: 4}
 ```
 
 #### 访问对象属性
-```javascript
+```javascript=
 let o = { x:1, y:2, z:{deep:3} }
 console.log(o.x)            // 1
 console.log(o['y'])         // 2
 console.log(o['z'].deep)    // 3
 ```
 #### Cenerator就像是iterator
-```javascript
+```javascript=
 let o = {
   key() {},
   *generator(i) {
@@ -100,7 +125,7 @@ console.log(gen.next())     // { value: undefined, done: true }
 #### 传播属性
 ECMAScript提案（第4阶段）的其余/扩展属性将扩展属性添加到对象文字。它将自己提供的对象的枚举属性复制到一个新的对象上。
 使用更短的语法，可以轻松克隆（不包括原型）或合并对象Object.assign()。
-```javascript
+```javascript=
 let obj1 = { foo:'bar', x:42 };
 let obj2 = { foo:'baz', y:13 };
 
@@ -113,7 +138,7 @@ let mergedObj = { ...obj1, ...obj2 };
 ```
 
 #### __proto__ 只能设为对象或函数，null是空对象。
-```javascript
+```javascript=
 let o
 
 
@@ -147,7 +172,7 @@ console.log(o.__proto__.__proto__ === Function.prototype)   // true
 #### Object.assign()
 通过复制一个或多个对象来创建一个新的对象。
 用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。
-```javascript
+```javascript=
 let o1,o2
 o1 = { a:1, b:2, c:3 };
 o2 = Object.assign( {c:4, d:5 }, o1);   // { c:3, d:5, a:1, b:2 }
@@ -155,73 +180,73 @@ o2 = Object.assign( {c:4, d:5 }, o1);   // { c:3, d:5, a:1, b:2 }
 
 #### Object.create()
 使用指定的原型对象和属性创建一个新对象。
-```javascript
+```javascript=
 
 ```
 
 #### Object.defineProperty()
 给对象添加一个属性并指定该属性的配置。
-```javascript
+```javascript=
 
 ```
 
 #### Object.defineProperties()
 给对象添加多个属性并分别指定它们的配置。
-```javascript
+```javascript=
 
 ```
 
 #### Object.entries()
 返回给定对象自身可枚举属性的[key, value]数组。
-```javascript
+```javascript=
 
 ```
 
 #### Object.freeze()
 冻结对象：其他代码不能删除或更改任何属性。
-```javascript
+```javascript=
 
 ```
 
 #### Object.getOwnPropertyDescriptor()
 返回对象指定的属性配置。
-```javascript
+```javascript=
 
 ```
 
 #### Object.getOwnPropertySymbols()
 返回一个数组，它包含了指定对象自身所有的符号属性。
-```javascript
+```javascript=
 
 ```
 
 #### Object.getPrototypeOf()
 返回指定对象的原型对象。
-```javascript
+```javascript=
 
 ```
 
 #### Object.is()
 比较两个值是否相同。所有 NaN 值都相等（这与==和===不同）。
-```javascript
+```javascript=
 
 ```
 
 #### Object.isExtensible()
 判断对象是否可扩展。
-```javascript
+```javascript=
 
 ```
 
 #### Object.isFrozen()
 判断对象是否已经冻结。
-```javascript
+```javascript=
 
 ```
 
 #### Object.isSealed()
 判断对象是否已经密封。
-```javascript
+```javascript=
 
 ```
 
@@ -237,11 +262,11 @@ o2 = Object.assign( {c:4, d:5 }, o1);   // { c:3, d:5, a:1, b:2 }
 #### 'propertyName' `in` obj
 返回obj和obj的继承链中是否有属性名propertyName
 
-```javascript
+```javascript=
 let o={
-	a:1,
-	get b(){ return 2; },
-	__proto__: {d:4 }
+  a:1,
+  get b(){ return 2; },
+  __proto__: {d:4 }
 }
 Object.defineProperty(o,'c',{value:3})
 
@@ -268,18 +293,18 @@ console.log(o.hasOwnProperty('d'));// false
 
 #### Object.preventExtensions()
 防止对象的任何扩展。
-```javascript
+```javascript=
 
 ```
 
 #### Object.seal()
 防止其他代码删除对象的属性。
-```javascript
+```javascript=
 
 ```
 
 #### Object.setPrototypeOf()
 设置对象的原型（即内部[[Prototype]]属性）。
-```javascript
+```javascript=
 
 ```
