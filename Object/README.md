@@ -1,7 +1,7 @@
 #### 定义Object
 `{}` 与 `new Object()` 一样。<br>
 在键值对中，键名只能是字符串，键值可以是任何类型的数据。
-```javascript=
+```javascript=1
 let o1 = { a:'foo', b:42, c:{} };
 console.log(o1.a); // 'foo'
 ```
